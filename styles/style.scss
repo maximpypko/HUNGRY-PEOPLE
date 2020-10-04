@@ -68,6 +68,9 @@ a {
       width: 100%;
     }
   }
+  & .nav_list {
+    display: none;
+  }
 }
 
 .header-content {
@@ -80,7 +83,6 @@ a {
   & .working-hours {
     height: max-content;
     width: max-content;
-    margin-left: 20px;
     position: relative;
     top: 50%;
     left: -50%;
@@ -117,15 +119,19 @@ a {
       border-radius: 5rem;
     }
     & .header-text_buttons {
+      display: flex;
+      justify-content: center;
       & .header-text_button {
-        display: inline-block;
-        margin: 0 2rem;
+        // display: block;
         text-transform: uppercase;
         border: $borderLink;
         background-color: transparent;
         color: #fff;
         padding: 2.4rem 4.8rem;
         border-radius: 0.5rem;
+        &:first-child {
+          margin-right: 4rem;
+        }
         &:hover {
           @include hoverBatton;
         }
@@ -180,21 +186,114 @@ a {
   }
 }
 
+/*========== SMALL SCREEN ==========*/
 @media screen and (min-width: 890px) and (max-width: 1199px) {
   html {
     font-size: 8px;
   }
-  .header-text_title {
-    width: max-content;
-    margin: 1.2rem auto;
+  .nav .nav_left .nav_link,
+  .nav .nav_right .nav_link {
+    font-size: 2rem;
+    padding: 3rem;
   }
-  .header-social_item {
-    margin-right: 3rem;
+  .header-content {
+    width: 100%;
+    height: calc(100vh - 8.2rem);
+    & .working-hours {
+      font-size: 1.5rem;
+    }
+    & .header-text_title {
+      width: max-content;
+      margin: 1.2rem auto;
+    }
+    .header-social_item {
+      margin-right: 3rem;
+      margin-top: 3.5rem;
+    }
   }
 }
 
+/*========== LAPTOP ==========*/
 @media screen and (min-width: 768px) and (max-width: 889px) {
   html {
     font-size: 6px;
+  }
+  .nav .nav_left .nav_link,
+  .nav .nav_right .nav_link {
+    font-size: 2rem;
+    padding: 3rem;
+  }
+  .header-content {
+    width: 100%;
+    height: calc(100vh - 8.2rem);
+    & .working-hours {
+      font-size: 2rem;
+    }
+    & .header-text_title {
+      width: max-content;
+      margin: 1.2rem auto;
+    }
+    & .header-social {
+      & .header-social_item {
+        margin-right: 4rem;
+        margin-top: 3.5rem;
+      }
+    }
+  }
+}
+
+/*========== MOBILE ==========*/
+@media screen and (max-width: 767px) {
+  /*========== SMALL SCREEN ==========*/
+
+  .nav {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: $borderLink;
+    & .nav_left,
+    & .nav_right {
+      display: none;
+    }
+    & .logo {
+      position: static;
+    }
+    & .nav_list {
+      display: block;
+      padding: 1rem;
+      font-size: 3rem;
+      margin-top: 1rem;
+    }
+  }
+  .header-content {
+    display: block;
+    & .working-hours {
+      display: none;
+    }
+    & .header-text {
+      justify-content: space-around;
+      height: 100%;
+      & .header-text_title {
+        display: block;
+        width: 220px;
+        font-size: 5rem;
+      }
+      & .header-text_line {
+        margin: 1rem auto;
+      }
+      & .header-text_buttons {
+        margin-top: 1.5rem;
+        & .header-text_button {
+          padding: 1.2rem 2.4rem;
+        }
+      }
+      & .header-down {
+        top: 0;
+      }
+    }
+    & .header-social {
+      display: none;
+    }
   }
 }
