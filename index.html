@@ -34,6 +34,7 @@
   <body>
     <header class="header">
       <div class="container">
+        <!-- ========== NAV ========== -->
         <nav class="nav">
           <ul class="nav_left">
             <li class="nav_item"><a href="#" class="nav_link">Home</a></li>
@@ -52,11 +53,8 @@
             <li class="nav_item"><a href="#" class="nav_link">Events</a></li>
             <li class="nav_item"><a href="#" class="nav_link">Contact</a></li>
           </ul>
-          <!-- ================================= -->
           <input type="checkbox" name="nav_trigger" id="nav_modal-switcher" />
           <label for="nav_modal-switcher" class="nav_list fas fa-bars"></label>
-          <!-- <label for="menu-switcher" class="menu-trigger fas fa-bars"></label> -->
-          <!-- ========================= -->
           <ul class="nav_modal">
             <li
               class="nav_modal-item nav_modal-item--position-top nav_modal-item--close"
@@ -114,7 +112,7 @@
             </li>
           </ul>
         </nav>
-
+        <!-- ========== HEADER CONTENT ========== -->
         <div class="header-content">
           <div class="working-hours">
             Mon - Fri: 8PM - 10PM, Sat - Sun: 8PM - 3AM
@@ -122,7 +120,7 @@
           <div class="header-text">
             <p class="header-text_title-description">Restaurant</p>
             <p class="header-text_title">Hungry people</p>
-            <div class="header-text_line"></div>
+            <div class="section-text_line"></div>
             <div class="header-text_buttons">
               <button class="header-text_button">
                 <a href="#">Book table</a>
@@ -158,7 +156,36 @@
         </div>
       </div>
     </header>
-    <main></main>
+    <main>
+      <section class="about">
+        <div class="container">
+          <div class="section-wrapper">
+            <div class="section-text">
+              <h2 class="section-title">About us</h2>
+              <div class="section-text_line"></div>
+              <p class="section-subtitle">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at
+                velit maximus, molestie est a, tempor magna.
+              </p>
+              <p class="section-description">
+                Integer ullamcorper neque eu purus euismod, ac faucibus mauris
+                posuere. Morbi non ultrices ligula. Sed dictum, enim sed
+                ullamcorper feugiat, dui odio vehicula eros, a sollicitudin
+                lorem quam nec sem. Mauris tincidunt feugiat diam convallis
+                pharetra. Nulla facilisis semper laoreet.
+              </p>
+            </div>
+            <div class="section-image">
+              <img
+                src="image/about-img.jpg"
+                alt="bonfire on the background of the kitchen"
+              />
+              <div class="section-frame"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
     <footer></footer>
   </body>
 </html>

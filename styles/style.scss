@@ -28,10 +28,46 @@ a {
   margin: 0 auto;
 }
 
+section {
+  & .section-wrapper {
+    padding: 10rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $primaryColor;
+    background-color: $secondaryColor;
+    & .section-text {
+      width: 40%;
+      text-align: center;
+      & .section-title {
+        @include sectionTitle;
+      }
+      & .section-text_line {
+        @include sectionTextLine;
+      }
+      & .section-subtitle {
+        @include sectionSubtitle;
+        font-weight: bold;
+      }
+      & .section-description {
+        @include sectionDescription;
+      }
+    }
+    & .section-image {
+      position: relative;
+      & .section-frame {
+        @include sectionFrame;
+      }
+    }
+  }
+}
+
+/*========== HEADER ==========*/
 .header {
+  height: 100vh;
+  min-height: fit-content;
   background: #170d05;
   background-image: url(../image/header-bg.jpg);
-  height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -96,31 +132,26 @@ a {
     transform: rotateZ(-90deg);
   }
   .header-text {
+    padding: 70px 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     text-transform: uppercase;
     border-left: $borderLink;
     border-right: $borderLink;
-
     & .header-text_title-description {
       font-size: 1.2rem;
       font-size: 1.4rem;
       font-family: "Mali", cursive;
     }
     & .header-text_title {
-      margin-top: 1.5rem;
       font-size: 9rem;
       line-height: 8rem;
       font-family: "Mali", cursive;
     }
-    & .header-text_line {
-      margin: 3rem;
-      width: 10%;
-      height: 0.3rem;
-      background-color: $complementaryColor;
-      border-radius: 5rem;
+    & .section-text_line {
+      @include sectionTextLine;
     }
     & .header-text_buttons {
       display: flex;
@@ -143,7 +174,6 @@ a {
     .header-down {
       position: relative;
       top: 10%;
-
       & .header-down_link {
         width: 4rem;
         height: 4rem;
@@ -179,7 +209,6 @@ a {
       align-items: center;
       border: $borderLink;
       border-radius: 50%;
-
       font-size: 2rem;
       line-height: 2.3rem;
       &:hover {
@@ -189,7 +218,10 @@ a {
   }
 }
 
+/*========== SECTION ABOUT ==========*/
+
 /*========== SMALL SCREEN ==========*/
+/*==================================*/
 @media screen and (min-width: 890px) and (max-width: 1199px) {
   html {
     font-size: 8px;
@@ -206,7 +238,7 @@ a {
     }
     & .header-text_title {
       width: max-content;
-      margin: 1.2rem auto;
+      margin: 0 auto;
     }
     & .header-text {
       & .header-down {
@@ -216,7 +248,6 @@ a {
         }
       }
     }
-
     .header-social_item {
       margin-right: 3rem;
       margin-top: 3.5rem;
@@ -225,6 +256,8 @@ a {
 }
 
 /*========== LAPTOP ==========*/
+/*============================*/
+
 @media screen and (min-width: 768px) and (max-width: 889px) {
   html {
     font-size: 6px;
@@ -246,8 +279,8 @@ a {
     & .header-text {
       & .header-down {
         & .header-down_link {
-          width: 8rem;
-          height: 8rem;
+          width: 6rem;
+          height: 6rem;
         }
       }
     }
@@ -263,9 +296,8 @@ a {
 }
 
 /*========== MOBILE ==========*/
+/*============================*/
 @media screen and (max-width: 767px) {
-  /*========== SMALL SCREEN ==========*/
-
   .nav {
     padding: 1rem;
     display: flex;
@@ -296,11 +328,9 @@ a {
       left: 0;
       display: none;
       z-index: 5;
-
       & .nav_modal-item {
         height: calc(100vh / 10);
         background-color: #170d05;
-
         & .nav_modal-link {
           width: 100%;
           height: 100%;
@@ -316,7 +346,6 @@ a {
         & .header-social {
           display: flex;
           height: 100%;
-
           & .header-social_item {
             width: calc(100% / 3);
             height: 100%;
@@ -335,7 +364,6 @@ a {
       display: block;
       animation: modal 1s ease-in-out;
     }
-
     @keyframes modal {
       0% {
         opacity: 0;

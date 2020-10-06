@@ -25,10 +25,82 @@ a {
   margin: 0 auto;
 }
 
+section .section-wrapper {
+  padding: 10rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #000;
+  background-color: #fff;
+}
+
+section .section-wrapper .section-text {
+  width: 40%;
+  text-align: center;
+}
+
+section .section-wrapper .section-text .section-title {
+  font-family: "Mali", cursive;
+  font-size: 5.6rem;
+  line-height: 4.8rem;
+  text-transform: uppercase;
+}
+
+section .section-wrapper .section-text .section-text_line {
+  margin: 2rem auto;
+  width: 10%;
+  height: 0.3rem;
+  background-color: #e8c300;
+  border-radius: 5rem;
+}
+
+section .section-wrapper .section-text .section-subtitle {
+  margin-bottom: 3rem;
+  font-size: 1.8rem;
+  line-height: 3.5rem;
+  font-weight: bold;
+}
+
+section .section-wrapper .section-text .section-description {
+  margin-bottom: 3rem;
+  font-size: 1.8rem;
+  line-height: 3.5rem;
+  font-weight: normal;
+}
+
+section .section-wrapper .section-image {
+  position: relative;
+}
+
+section .section-wrapper .section-image .section-frame {
+  position: absolute;
+  top: 50%;
+  left: 90%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 24rem;
+  height: 24rem;
+  background: transparent;
+  border: 20px solid #e8c300;
+  -webkit-filter: drop-shadow(0px 0px 100px rgba(0, 0, 0, 0.5));
+          filter: drop-shadow(0px 0px 100px rgba(0, 0, 0, 0.5));
+  border-radius: 5px;
+}
+
+/*========== HEADER ==========*/
 .header {
+  height: 100vh;
+  min-height: -webkit-fit-content;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
   background: #170d05;
   background-image: url(../image/header-bg.jpg);
-  height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -127,6 +199,7 @@ a {
 }
 
 .header-content .header-text {
+  padding: 70px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -134,9 +207,8 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -152,14 +224,13 @@ a {
 }
 
 .header-content .header-text .header-text_title {
-  margin-top: 1.5rem;
   font-size: 9rem;
   line-height: 8rem;
   font-family: "Mali", cursive;
 }
 
-.header-content .header-text .header-text_line {
-  margin: 3rem;
+.header-content .header-text .section-text_line {
+  margin: 2rem auto;
   width: 10%;
   height: 0.3rem;
   background-color: #e8c300;
@@ -271,7 +342,9 @@ a {
   cursor: pointer;
 }
 
+/*========== SECTION ABOUT ==========*/
 /*========== SMALL SCREEN ==========*/
+/*==================================*/
 @media screen and (min-width: 890px) and (max-width: 1199px) {
   html {
     font-size: 8px;
@@ -291,7 +364,7 @@ a {
     width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;
-    margin: 1.2rem auto;
+    margin: 0 auto;
   }
   .header-content .header-text .header-down .header-down_link {
     width: 6rem;
@@ -304,6 +377,7 @@ a {
 }
 
 /*========== LAPTOP ==========*/
+/*============================*/
 @media screen and (min-width: 768px) and (max-width: 889px) {
   html {
     font-size: 6px;
@@ -326,8 +400,8 @@ a {
     margin: 1.2rem auto;
   }
   .header-content .header-text .header-down .header-down_link {
-    width: 8rem;
-    height: 8rem;
+    width: 6rem;
+    height: 6rem;
   }
   .header-content .header-social .header-social_item a {
     width: 8rem;
@@ -338,8 +412,8 @@ a {
 }
 
 /*========== MOBILE ==========*/
+/*============================*/
 @media screen and (max-width: 767px) {
-  /*========== SMALL SCREEN ==========*/
   .nav {
     padding: 1rem;
     display: -webkit-box;
