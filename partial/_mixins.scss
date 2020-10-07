@@ -35,17 +35,23 @@
 @mixin sectionDescription {
   @include sectionSubtitle;
   font-weight: normal;
+  margin-bottom: 1rem;
 }
 
-@mixin sectionFrame {
+@mixin sectionFrameRight {
   position: absolute;
   top: 50%;
-  left: 90%;
-  transform: translate(-50%, -50%);
-  width: 24rem;
-  height: 24rem;
+  left: 100%;
+  transform: translate(-70%, -50%);
+  width: 50%;
+  height: 50%;
   background: transparent;
-  border: 20px solid $complementaryColor;
+  border: 2rem solid $complementaryColor;
   filter: drop-shadow(0px 0px 100px rgba(0, 0, 0, 0.5));
-  border-radius: 5px;
+  border-radius: 0.5rem;
+}
+
+@mixin sectionFrameLeft {
+  @include sectionFrameRight;
+  left: 18%;
 }
