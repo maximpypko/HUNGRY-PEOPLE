@@ -29,13 +29,13 @@ a {
 }
 
 section {
+  background-color: $secondaryColor;
   & .section-wrapper {
     padding: 8rem 0;
     display: flex;
     justify-content: center;
     align-items: center;
     color: $primaryColor;
-    background-color: $secondaryColor;
     & .section-text {
       padding-right: 5rem;
       width: 45%;
@@ -75,6 +75,7 @@ section {
   background-image: url(../image/header-bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  filter: drop-shadow(0px 0px 1rem #000000);
 }
 
 .nav {
@@ -225,15 +226,20 @@ section {
 
 /*========== SECTION TEAM ==========*/
 .team {
+  background: #170d05;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(../image/team-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: drop-shadow(0px 0px 1rem #000000);
+  & .section-topic {
+    @include sectionTopic;
+  }
   & .section-wrapper {
+    padding-top: 4rem;
     flex-direction: row-reverse;
-    background: #170d05;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-      url(../image/team-bg.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    filter: drop-shadow(0px 0px 1rem #000000);
     color: $secondaryColor;
+
     & .section-text {
       padding: 0 0 0 5rem;
     }
@@ -241,6 +247,69 @@ section {
       & .section-frame {
         @include sectionFrameLeft;
       }
+    }
+  }
+}
+
+/*========== SECTION ORDER ==========*/
+.order {
+  & .section-text {
+    width: max-content;
+  }
+}
+form {
+  display: grid;
+  grid-template-columns: 49% 49%;
+  grid-template-rows: 4 (1fr);
+  grid-template-areas:
+    "name email"
+    "phone people"
+    "date time"
+    "button button";
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+  & .order_name {
+    grid-area: name;
+  }
+  & .order_email {
+    grid-area: email;
+  }
+  & .order_phone {
+    grid-area: phone;
+  }
+  & .order_people {
+    grid-area: people;
+  }
+  & .order_date {
+    grid-area: date;
+  }
+  & .order_time {
+    grid-area: time;
+  }
+  & .order_button {
+    grid-area: button;
+  }
+
+  & * {
+    padding: 2rem;
+    list-style: none;
+    border: none;
+    background: #e5e5e5;
+    border-radius: 5px;
+    color: rgba(51, 51, 51, 0.5);
+
+    font-size: 1.4rem;
+    line-height: 1.9rem;
+    align-items: center;
+    cursor: pointer;
+    &:hover {
+      @include hoverBatton;
+    }
+  }
+  & .order_button {
+    background-color: $complementaryColor;
+    &:hover {
+      box-shadow: 0 0 1rem rgba(51, 51, 51, 0.8);
     }
   }
 }

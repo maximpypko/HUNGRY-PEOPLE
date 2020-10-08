@@ -11,6 +11,16 @@
   cursor: pointer;
 }
 
+@mixin sectionTopic {
+  padding-top: 4rem;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
 @mixin sectionTitle {
   font-family: "Mali", cursive;
   font-size: 5.6rem;
