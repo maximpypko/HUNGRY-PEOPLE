@@ -37,9 +37,7 @@ section {
     align-items: center;
     color: $primaryColor;
     & .section-text {
-      padding-right: 5rem;
-      width: 45%;
-      text-align: center;
+      @include sectionText;
       & .section-title {
         @include sectionTitle;
       }
@@ -225,7 +223,8 @@ section {
 }
 
 /*========== SECTION TEAM ==========*/
-.team {
+.team,
+.specialties {
   background: #170d05;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url(../image/team-bg.jpg);
@@ -295,7 +294,7 @@ form {
     list-style: none;
     border: none;
     background: #e5e5e5;
-    border-radius: 5px;
+    border-radius: 0.5rem;
     color: rgba(51, 51, 51, 0.5);
 
     font-size: 1.4rem;
@@ -307,10 +306,115 @@ form {
     }
   }
   & .order_button {
+    margin-bottom: 1rem;
     background-color: $complementaryColor;
+    text-transform: uppercase;
+    font-weight: bold;
     &:hover {
       box-shadow: 0 0 1rem rgba(51, 51, 51, 0.8);
     }
+  }
+}
+
+/*========== SECTION MENU ==========*/
+.menu {
+  color: $primaryColor;
+  & .section-text {
+    @include sectionText;
+    margin: 0 auto;
+
+    & .section-title {
+      @include sectionTitle;
+    }
+    & .section-text_line {
+      @include sectionTextLine;
+    }
+    & .section-subtitle {
+      @include sectionSubtitle;
+    }
+  }
+}
+
+/*========== SECTION MENU ==========*/
+.menu .section-wrapper {
+  flex-direction: column;
+  & .section-text {
+    padding-right: 0;
+  }
+}
+
+.menu_tabs {
+  padding: 2rem 1rem;
+  width: 90%;
+
+  margin: 0 1rem;
+  border: 1px solid #e5e5e5;
+  border-radius: 0.5rem;
+  & .product-switcher {
+    display: none;
+  }
+  & .menu_change {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 2rem;
+    & .menu_change-item {
+      display: block;
+      padding: 2.2rem 5rem;
+      margin: 0 0.2rem;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 18px;
+      cursor: pointer;
+      background: #e5e5e5;
+      border-radius: 0.5rem;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        background-color: $complementaryColor;
+      }
+    }
+  }
+  & .menu_product {
+    & .menu_product-item {
+      display: inline-block;
+      width: 33%;
+      padding: 0.5rem 1rem;
+      & .product-item_title {
+        font-family: "Mali", cursive;
+        font-size: 1.8rem;
+        line-height: 1.8rem;
+        text-transform: uppercase;
+      }
+      & .product-item_description {
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+        color: #b2b2b2;
+      }
+    }
+  }
+  & #soupe:checked ~ .menu_change .menu_change-item--soupe,
+  & #pizza:checked ~ .menu_change .menu_change-item--pizza,
+  & #pasta:checked ~ .menu_change .menu_change-item--pasta,
+  & #desert:checked ~ .menu_change .menu_change-item--desert,
+  & #wine:checked ~ .menu_change .menu_change-item--wine,
+  & #beer:checked ~ .menu_change .menu_change-item--beer,
+  & #drinks:checked ~ .menu_change .menu_change-item--drinks {
+    background-color: $complementaryColor;
+    cursor: default;
+  }
+  & .menu_product {
+    display: none;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  & #soupe:checked ~ .menu_product--soupe,
+  & #pizza:checked ~ .menu_product--pizza,
+  & #pasta:checked ~ .menu_product--pasta,
+  & #desert:checked ~ .menu_product--desert,
+  & #wine:checked ~ .menu_product--wine,
+  & #beer:checked ~ .menu_product--beer,
+  & #drinks:checked ~ .menu_product--drinks {
+    display: block;
   }
 }
 
@@ -345,6 +449,27 @@ form {
     .header-social_item {
       margin-right: 3rem;
       margin-top: 3.5rem;
+    }
+  }
+
+  input,
+  select {
+    font-size: 1.6rem;
+  }
+
+  .menu {
+    & .section-wrapper {
+      & .section-text {
+        width: 50%;
+      }
+    }
+    & .menu_product-item {
+      width: 28%;
+    }
+    & .menu_tabs {
+      & .menu_change-item {
+        padding: 2rem 4.5rem;
+      }
     }
   }
 }
@@ -386,6 +511,11 @@ form {
         margin-top: 6rem;
       }
     }
+  }
+
+  input,
+  select {
+    font-size: 2rem;
   }
 }
 
@@ -507,7 +637,8 @@ form {
   }
 
   section,
-  .team {
+  .team,
+  .specialties {
     & .section-wrapper {
       padding: 3rem 0;
       flex-direction: column;
@@ -522,6 +653,27 @@ form {
         width: 70%;
         & .section-frame {
           border: 1.2rem solid $complementaryColor;
+        }
+      }
+    }
+  }
+
+  .menu {
+    & .menu_tabs {
+      & .menu_change {
+        display: block;
+        text-align: center;
+        & .menu_change-item {
+          display: inline-block;
+          padding: 2rem 3rem;
+          margin: 0.3rem;
+          font-size: 1rem;
+        }
+      }
+      & .menu_product {
+        text-align: center;
+        & .menu_product-item {
+          width: 100%;
         }
       }
     }

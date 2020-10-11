@@ -21,6 +21,12 @@
   text-transform: uppercase;
 }
 
+@mixin sectionText {
+  padding-right: 5rem;
+  width: 45%;
+  text-align: center;
+}
+
 @mixin sectionTitle {
   font-family: "Mali", cursive;
   font-size: 5.6rem;
