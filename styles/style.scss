@@ -224,7 +224,8 @@ section {
 
 /*========== SECTION TEAM ==========*/
 .team,
-.specialties {
+.specialties,
+.events {
   background: #170d05;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url(../image/team-bg.jpg);
@@ -335,7 +336,6 @@ form {
   }
 }
 
-/*========== SECTION MENU ==========*/
 .menu .section-wrapper {
   flex-direction: column;
   & .section-text {
@@ -346,8 +346,6 @@ form {
 .menu_tabs {
   padding: 2rem 1rem;
   width: 90%;
-
-  margin: 0 1rem;
   border: 1px solid #e5e5e5;
   border-radius: 0.5rem;
   & .product-switcher {
@@ -415,6 +413,52 @@ form {
   & #beer:checked ~ .menu_product--beer,
   & #drinks:checked ~ .menu_product--drinks {
     display: block;
+  }
+}
+
+/*========== section EVENTS ==========*/
+.events {
+  background: url(../image/events-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  & .section-wrapper {
+    flex-direction: row;
+    & .section-image span {
+      width: 84%;
+      height: 15%;
+      background-color: #000;
+      position: absolute;
+      font-family: "Mali", cursive;
+      font-size: 2.4rem;
+      line-height: 1.2rem;
+      display: flex;
+      align-items: center;
+      text-indent: 2rem;
+      text-transform: uppercase;
+      border-top-left-radius: 0.5rem;
+      border-top-right-radius: 0.5rem;
+    }
+    & .events-two {
+      top: 1%;
+      left: -19%;
+      transform: rotateZ(270deg) translate(-50%, -50%);
+    }
+    & .events-one {
+      top: 84%;
+      left: 36.5%;
+      transform: rotateZ(90deg) translate(-50%, -50%);
+    }
+    & .section-image {
+      & .section-frame--right {
+        @include sectionFrameRight;
+      }
+    }
+  }
+  & .fhoto-wrapper {
+    display: flex;
+    & .events-fhoto {
+      width: 25%;
+    }
   }
 }
 
@@ -638,7 +682,8 @@ form {
 
   section,
   .team,
-  .specialties {
+  .specialties,
+  .events {
     & .section-wrapper {
       padding: 3rem 0;
       flex-direction: column;
@@ -675,6 +720,17 @@ form {
         & .menu_product-item {
           width: 100%;
         }
+      }
+    }
+  }
+
+  .events {
+    & .fhoto-wrapper {
+      display: block;
+      & .events-fhoto {
+        display: block;
+        width: 70%;
+        margin: 0 auto;
       }
     }
   }

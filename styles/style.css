@@ -356,7 +356,8 @@ section .section-wrapper .section-image .section-frame {
 
 /*========== SECTION TEAM ==========*/
 .team,
-.specialties {
+.specialties,
+.events {
   background: #170d05;
   background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.6))), url(../image/team-bg.jpg);
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../image/team-bg.jpg);
@@ -367,7 +368,8 @@ section .section-wrapper .section-image .section-frame {
 }
 
 .team .section-topic,
-.specialties .section-topic {
+.specialties .section-topic,
+.events .section-topic {
   padding-top: 4rem;
   text-align: center;
   font-weight: bold;
@@ -378,7 +380,8 @@ section .section-wrapper .section-image .section-frame {
 }
 
 .team .section-wrapper,
-.specialties .section-wrapper {
+.specialties .section-wrapper,
+.events .section-wrapper {
   padding-top: 4rem;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: reverse;
@@ -388,12 +391,14 @@ section .section-wrapper .section-image .section-frame {
 }
 
 .team .section-wrapper .section-text,
-.specialties .section-wrapper .section-text {
+.specialties .section-wrapper .section-text,
+.events .section-wrapper .section-text {
   padding: 0 0 0 5rem;
 }
 
 .team .section-wrapper .section-image .section-frame,
-.specialties .section-wrapper .section-image .section-frame {
+.specialties .section-wrapper .section-image .section-frame,
+.events .section-wrapper .section-image .section-frame {
   position: absolute;
   top: 50%;
   left: 100%;
@@ -538,7 +543,6 @@ form .order_button:hover {
   line-height: 3.5rem;
 }
 
-/*========== SECTION MENU ==========*/
 .menu .section-wrapper {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -553,7 +557,6 @@ form .order_button:hover {
 .menu_tabs {
   padding: 2rem 1rem;
   width: 90%;
-  margin: 0 1rem;
   border: 1px solid #e5e5e5;
   border-radius: 0.5rem;
 }
@@ -635,6 +638,79 @@ form .order_button:hover {
 .menu_tabs #beer:checked ~ .menu_product--beer,
 .menu_tabs #drinks:checked ~ .menu_product--drinks {
   display: block;
+}
+
+/*========== section EVENTS ==========*/
+.events {
+  background: url(../image/events-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.events .section-wrapper {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.events .section-wrapper .section-image span {
+  width: 84%;
+  height: 15%;
+  background-color: #000;
+  position: absolute;
+  font-family: "Mali", cursive;
+  font-size: 2.4rem;
+  line-height: 1.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-indent: 2rem;
+  text-transform: uppercase;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.events .section-wrapper .events-two {
+  top: 1%;
+  left: -19%;
+  -webkit-transform: rotateZ(270deg) translate(-50%, -50%);
+          transform: rotateZ(270deg) translate(-50%, -50%);
+}
+
+.events .section-wrapper .events-one {
+  top: 84%;
+  left: 36.5%;
+  -webkit-transform: rotateZ(90deg) translate(-50%, -50%);
+          transform: rotateZ(90deg) translate(-50%, -50%);
+}
+
+.events .section-wrapper .section-image .section-frame--right {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  -webkit-transform: translate(-70%, -50%);
+          transform: translate(-70%, -50%);
+  width: 50%;
+  height: 50%;
+  background: transparent;
+  border: 2rem solid #e8c300;
+  -webkit-filter: drop-shadow(0px 0px 100px rgba(0, 0, 0, 0.5));
+          filter: drop-shadow(0px 0px 100px rgba(0, 0, 0, 0.5));
+  border-radius: 0.5rem;
+}
+
+.events .fhoto-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.events .fhoto-wrapper .events-fhoto {
+  width: 25%;
 }
 
 /*========== SMALL SCREEN ==========*/
@@ -872,7 +948,8 @@ form .order_button:hover {
   }
   section .section-wrapper,
   .team .section-wrapper,
-  .specialties .section-wrapper {
+  .specialties .section-wrapper,
+  .events .section-wrapper {
     padding: 3rem 0;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -881,23 +958,27 @@ form .order_button:hover {
   }
   section .section-wrapper .section-text,
   .team .section-wrapper .section-text,
-  .specialties .section-wrapper .section-text {
+  .specialties .section-wrapper .section-text,
+  .events .section-wrapper .section-text {
     padding: 0;
     width: 80%;
   }
   section .section-wrapper .section-text .section-title,
   .team .section-wrapper .section-text .section-title,
-  .specialties .section-wrapper .section-text .section-title {
+  .specialties .section-wrapper .section-text .section-title,
+  .events .section-wrapper .section-text .section-title {
     font-size: 3.5rem;
   }
   section .section-wrapper .section-image,
   .team .section-wrapper .section-image,
-  .specialties .section-wrapper .section-image {
+  .specialties .section-wrapper .section-image,
+  .events .section-wrapper .section-image {
     width: 70%;
   }
   section .section-wrapper .section-image .section-frame,
   .team .section-wrapper .section-image .section-frame,
-  .specialties .section-wrapper .section-image .section-frame {
+  .specialties .section-wrapper .section-image .section-frame,
+  .events .section-wrapper .section-image .section-frame {
     border: 1.2rem solid #e8c300;
   }
   .menu .menu_tabs .menu_change {
@@ -915,6 +996,14 @@ form .order_button:hover {
   }
   .menu .menu_tabs .menu_product .menu_product-item {
     width: 100%;
+  }
+  .events .fhoto-wrapper {
+    display: block;
+  }
+  .events .fhoto-wrapper .events-fhoto {
+    display: block;
+    width: 70%;
+    margin: 0 auto;
   }
 }
 /*# sourceMappingURL=style.css.map */
