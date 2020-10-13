@@ -256,63 +256,43 @@ section {
   & .section-text {
     width: max-content;
   }
-}
-form {
-  display: grid;
-  grid-template-columns: 49% 49%;
-  grid-template-rows: 4 (1fr);
-  grid-template-areas:
-    "name email"
-    "phone people"
-    "date time"
-    "button button";
-  grid-column-gap: 1rem;
-  grid-row-gap: 1rem;
-  & .order_name {
-    grid-area: name;
-  }
-  & .order_email {
-    grid-area: email;
-  }
-  & .order_phone {
-    grid-area: phone;
-  }
-  & .order_people {
-    grid-area: people;
-  }
-  & .order_date {
-    grid-area: date;
-  }
-  & .order_time {
-    grid-area: time;
-  }
-  & .order_button {
-    grid-area: button;
-  }
-
-  & * {
-    padding: 2rem;
-    list-style: none;
-    border: none;
-    background: #e5e5e5;
-    border-radius: 0.5rem;
-    color: rgba(51, 51, 51, 0.5);
-
-    font-size: 1.4rem;
-    line-height: 1.9rem;
-    align-items: center;
-    cursor: pointer;
-    &:hover {
-      @include hoverBatton;
+  & form {
+    display: grid;
+    grid-template-columns: 49% 49%;
+    grid-template-rows: 4 (1fr);
+    grid-template-areas:
+      "name email"
+      "phone people"
+      "date time"
+      "button button";
+    grid-gap: 1rem;
+    & .order_name {
+      grid-area: name;
     }
-  }
-  & .order_button {
-    margin-bottom: 1rem;
-    background-color: $complementaryColor;
-    text-transform: uppercase;
-    font-weight: bold;
-    &:hover {
-      box-shadow: 0 0 1rem rgba(51, 51, 51, 0.8);
+    & .order_email {
+      grid-area: email;
+    }
+    & .order_phone {
+      grid-area: phone;
+    }
+    & .order_people {
+      grid-area: people;
+    }
+    & .order_date {
+      grid-area: date;
+    }
+    & .order_time {
+      grid-area: time;
+    }
+    & .order_button {
+      grid-area: button;
+    }
+
+    & * {
+      @include formAllElements;
+    }
+    & .order_button {
+      @include formButton;
     }
   }
 }
@@ -462,6 +442,85 @@ form {
   }
 }
 
+/*========== section EVENTS ==========*/
+.contact {
+  & .section-wrapper {
+    flex-direction: column;
+    & .section-text {
+      padding: 0;
+    }
+  }
+  & form {
+    width: 95%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
+    grid-template-areas:
+      "name name email email phone phone"
+      "message message message message message message"
+      "contacts contacts contacts button button button";
+    grid-gap: 1rem;
+    & .contact_name {
+      grid-area: name;
+    }
+    & .contact_email {
+      grid-area: email;
+    }
+    & .contact_tel {
+      grid-area: phone;
+    }
+    & .contact_message {
+      grid-area: message;
+    }
+    & .contacts {
+      grid-area: contacts;
+    }
+    & .contact_button {
+      grid-area: button;
+    }
+    & .contact_message {
+      resize: none;
+    }
+    & * {
+      @include formAllElements;
+    }
+    & .contact_button {
+      @include formButton;
+      margin-bottom: 0px;
+    }
+    & .contacts {
+      padding: 0;
+      display: flex;
+      background: none;
+      & .contacts_item {
+        padding: 0;
+        margin-right: 2rem;
+        font-weight: 500;
+        font-size: 1.2rem;
+        line-height: 1.4rem;
+        background: none;
+        & a {
+          padding: 2rem 1rem;
+          background: none;
+          font-weight: 500;
+          font-size: 1.3rem;
+          line-height: 1.4rem;
+          &:hover {
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 0 1rem rgba(51, 51, 51, 0.8);
+          }
+        }
+        & i {
+          padding: 0;
+          background: none;
+          color: $complementaryColor;
+        }
+      }
+    }
+  }
+}
+
 /*========== SMALL SCREEN ==========*/
 /*==================================*/
 @media screen and (min-width: 890px) and (max-width: 1199px) {
@@ -516,6 +575,22 @@ form {
       }
     }
   }
+
+  .contact {
+    & .section-wrapper {
+      & form {
+        & .contacts {
+          padding: 0;
+        }
+        & .contacts_item {
+          margin-right: 1.2rem;
+          & a {
+            font-size: 1.4rem;
+          }
+        }
+      }
+    }
+  }
 }
 
 /*========== LAPTOP ==========*/
@@ -523,7 +598,7 @@ form {
 
 @media screen and (min-width: 768px) and (max-width: 889px) {
   html {
-    font-size: 6px;
+    font-size: 7px;
   }
   .nav .nav_left .nav_link,
   .nav .nav_right .nav_link {
@@ -560,6 +635,32 @@ form {
   input,
   select {
     font-size: 2rem;
+  }
+
+  .menu {
+    & .section-wrapper {
+      & .menu_change {
+        & .menu_change-item {
+          padding: 2rem 4rem;
+        }
+      }
+    }
+  }
+
+  .contact {
+    & .section-wrapper {
+      & form {
+        & .contacts {
+          padding: 0;
+        }
+        & .contacts_item {
+          padding-right: 1rem;
+          & a {
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -725,12 +826,42 @@ form {
   }
 
   .events {
+    & .section-wrapper {
+      & .section-image {
+        & span {
+          font-size: 1.5rem;
+        }
+      }
+    }
+
     & .fhoto-wrapper {
       display: block;
       & .events-fhoto {
         display: block;
         width: 70%;
         margin: 0 auto;
+      }
+    }
+  }
+
+  .contact {
+    & form {
+      display: block;
+      & * {
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+      & .contacts {
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 0;
+        & .contacts_item {
+          padding: 0;
+          & i {
+            margin-bottom: 0;
+            display: inline;
+          }
+        }
       }
     }
   }

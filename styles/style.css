@@ -421,7 +421,7 @@ section .section-wrapper .section-image .section-frame {
   width: max-content;
 }
 
-form {
+.order form {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 49% 49%;
@@ -429,54 +429,56 @@ form {
   -ms-grid-rows: 4 1fr;
       grid-template-rows: 4 1fr;
       grid-template-areas: "name email" "phone people" "date time" "button button";
-  grid-column-gap: 1rem;
-  grid-row-gap: 1rem;
+  grid-gap: 1rem;
 }
 
-form .order_name {
+.order form .order_name {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
   grid-area: name;
 }
 
-form .order_email {
+.order form .order_email {
   -ms-grid-row: 1;
-  -ms-grid-column: 2;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 2;
   grid-area: email;
 }
 
-form .order_phone {
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
+.order form .order_phone {
+  -ms-grid-row: 1;
+  -ms-grid-column: 5;
+  -ms-grid-column-span: 2;
   grid-area: phone;
 }
 
-form .order_people {
+.order form .order_people {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: people;
 }
 
-form .order_date {
+.order form .order_date {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: date;
 }
 
-form .order_time {
+.order form .order_time {
   -ms-grid-row: 3;
   -ms-grid-column: 2;
   grid-area: time;
 }
 
-form .order_button {
-  -ms-grid-row: 4;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
+.order form .order_button {
+  -ms-grid-row: 3;
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 3;
   grid-area: button;
 }
 
-form * {
+.order form * {
   padding: 2rem;
   list-style: none;
   border: none;
@@ -491,21 +493,21 @@ form * {
   cursor: pointer;
 }
 
-form *:hover {
+.order form *:hover {
   background-color: #e8c300;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
 }
 
-form .order_button {
+.order form .order_button {
   margin-bottom: 1rem;
   background-color: #e8c300;
   text-transform: uppercase;
   font-weight: bold;
 }
 
-form .order_button:hover {
+.order form .order_button:hover {
   -webkit-box-shadow: 0 0 1rem rgba(51, 51, 51, 0.8);
           box-shadow: 0 0 1rem rgba(51, 51, 51, 0.8);
 }
@@ -713,6 +715,149 @@ form .order_button:hover {
   width: 25%;
 }
 
+/*========== section EVENTS ==========*/
+.contact .section-wrapper {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.contact .section-wrapper .section-text {
+  padding: 0;
+}
+
+.contact form {
+  width: 95%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr 2fr 1fr;
+      grid-template-rows: 1fr 2fr 1fr;
+      grid-template-areas: "name name email email phone phone" "message message message message message message" "contacts contacts contacts button button button";
+  grid-gap: 1rem;
+}
+
+.contact form .contact_name {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: name;
+}
+
+.contact form .contact_email {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 2;
+  grid-area: email;
+}
+
+.contact form .contact_tel {
+  -ms-grid-row: 1;
+  -ms-grid-column: 5;
+  -ms-grid-column-span: 2;
+  grid-area: phone;
+}
+
+.contact form .contact_message {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 6;
+  grid-area: message;
+}
+
+.contact form .contacts {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: contacts;
+}
+
+.contact form .contact_button {
+  -ms-grid-row: 3;
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 3;
+  grid-area: button;
+}
+
+.contact form .contact_message {
+  resize: none;
+}
+
+.contact form * {
+  padding: 2rem;
+  list-style: none;
+  border: none;
+  background: #e5e5e5;
+  border-radius: 0.5rem;
+  color: rgba(51, 51, 51, 0.5);
+  font-size: 1.4rem;
+  line-height: 1.9rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.contact form *:hover {
+  background-color: #e8c300;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.contact form .contact_button {
+  margin-bottom: 1rem;
+  background-color: #e8c300;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+
+.contact form .contact_button:hover {
+  -webkit-box-shadow: 0 0 1rem rgba(51, 51, 51, 0.8);
+          box-shadow: 0 0 1rem rgba(51, 51, 51, 0.8);
+}
+
+.contact form .contacts {
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: none;
+}
+
+.contact form .contacts .contacts_item {
+  padding: 0;
+  margin-right: 2rem;
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  background: none;
+}
+
+.contact form .contacts .contacts_item a {
+  padding: 2rem 1rem;
+  background: none;
+  font-weight: 500;
+  font-size: 1.3rem;
+  line-height: 1.4rem;
+}
+
+.contact form .contacts .contacts_item a:hover {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-box-shadow: 0 0 1rem rgba(51, 51, 51, 0.8);
+          box-shadow: 0 0 1rem rgba(51, 51, 51, 0.8);
+}
+
+.contact form .contacts .contacts_item i {
+  padding: 0;
+  background: none;
+  color: #e8c300;
+}
+
 /*========== SMALL SCREEN ==========*/
 /*==================================*/
 @media screen and (min-width: 890px) and (max-width: 1199px) {
@@ -757,13 +902,22 @@ form .order_button:hover {
   .menu .menu_tabs .menu_change-item {
     padding: 2rem 4.5rem;
   }
+  .contact .section-wrapper form .contacts {
+    padding: 0;
+  }
+  .contact .section-wrapper form .contacts_item {
+    margin-right: 1.2rem;
+  }
+  .contact .section-wrapper form .contacts_item a {
+    font-size: 1.4rem;
+  }
 }
 
 /*========== LAPTOP ==========*/
 /*============================*/
 @media screen and (min-width: 768px) and (max-width: 889px) {
   html {
-    font-size: 6px;
+    font-size: 7px;
   }
   .nav .nav_left .nav_link,
   .nav .nav_right .nav_link {
@@ -795,6 +949,18 @@ form .order_button:hover {
   input,
   select {
     font-size: 2rem;
+  }
+  .menu .section-wrapper .menu_change .menu_change-item {
+    padding: 2rem 4rem;
+  }
+  .contact .section-wrapper form .contacts {
+    padding: 0;
+  }
+  .contact .section-wrapper form .contacts_item {
+    padding-right: 1rem;
+  }
+  .contact .section-wrapper form .contacts_item a {
+    font-size: 1.2rem;
   }
 }
 
@@ -997,6 +1163,9 @@ form .order_button:hover {
   .menu .menu_tabs .menu_product .menu_product-item {
     width: 100%;
   }
+  .events .section-wrapper .section-image span {
+    font-size: 1.5rem;
+  }
   .events .fhoto-wrapper {
     display: block;
   }
@@ -1004,6 +1173,28 @@ form .order_button:hover {
     display: block;
     width: 70%;
     margin: 0 auto;
+  }
+  .contact form {
+    display: block;
+  }
+  .contact form * {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  .contact form .contacts {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+    margin-bottom: 0;
+  }
+  .contact form .contacts .contacts_item {
+    padding: 0;
+  }
+  .contact form .contacts .contacts_item i {
+    margin-bottom: 0;
+    display: inline;
   }
 }
 /*# sourceMappingURL=style.css.map */
