@@ -1228,6 +1228,10 @@ section .section-wrapper .section-image .section-frame {
   }
   .contact form .contacts .contacts_item {
     padding: 0;
+    margin: 0;
+  }
+  .contact form .contacts .contacts_item a {
+    padding: 0.7rem;
   }
   .contact form .contacts .contacts_item i {
     margin-bottom: 0;
