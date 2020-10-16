@@ -855,7 +855,7 @@ section .section-wrapper .section-image .section-frame {
 }
 
 .contact form .contacts .contacts_item a {
-  padding: 2rem 1rem;
+  padding: 2rem 0;
   background: none;
   font-weight: 500;
   font-size: 1.3rem;
