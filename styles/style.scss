@@ -66,19 +66,6 @@ section {
   }
 }
 
-/*========== SCROLL UP ==========*/
-.scroll-up {
-  position: fixed;
-  top: 90%;
-  left: 90%;
-  font-size: 5rem;
-  color: $complementaryColor;
-  &:hover {
-    transition: all 0.3s ease-in-out;
-    transform: scale(1.3);
-  }
-}
-
 /*========== HEADER ==========*/
 .header {
   height: 100vh;
@@ -150,7 +137,8 @@ section {
     transform: rotateZ(-90deg);
   }
   .header-text {
-    padding: 70px 0;
+    margin-top: 10rem;
+    padding: 0 0 7rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -541,8 +529,22 @@ section {
   }
 }
 
+/*========== SCROLL UP ==========*/
+.scroll-up {
+  position: fixed;
+  top: 90%;
+  left: 90%;
+  font-size: 5rem;
+  color: $complementaryColor;
+  &:hover {
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.3);
+  }
+}
+
+/*========== FOOTER ==========*/
 .footer {
-  padding: 48px;
+  padding: 4.8rem;
   font-weight: normal;
   font-size: 1.2rem;
   line-height: 1.2rem;
@@ -562,9 +564,15 @@ section {
   }
   .nav .nav_left .nav_link,
   .nav .nav_right .nav_link {
-    font-size: 2rem;
-    padding: 3rem;
+    font-size: 1.5rem;
+    padding: 4rem 2rem;
   }
+  .nav {
+    & .logo {
+      top: 1rem;
+    }
+  }
+
   .header-content {
     height: calc(100vh - 8.2rem);
     & .working-hours {
@@ -636,7 +644,7 @@ section {
   .nav .nav_left .nav_link,
   .nav .nav_right .nav_link {
     font-size: 2rem;
-    padding: 3rem;
+    padding: 3rem 2rem;
   }
   .header-content {
     height: calc(100vh - 8.2rem);
@@ -703,7 +711,7 @@ section {
   .nav {
     padding: 1rem;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     border-bottom: $borderLink;
     & .nav_left,
@@ -712,12 +720,13 @@ section {
     }
     & .logo {
       position: static;
+      margin-left: 7rem;
     }
     & .nav_list {
       display: block;
+      margin: 1rem 3rem 0;
       padding: 1rem;
       font-size: 3rem;
-      margin-top: 1rem;
     }
     & #nav_modal-switcher {
       display: none;
@@ -785,18 +794,17 @@ section {
     & .header-text {
       justify-content: space-around;
       height: 100%;
+      margin-top: 0;
+      padding: 0;
       & .header-text_title {
         display: block;
-        width: 220px;
+        text-align: center;
         font-size: 5rem;
       }
-      & .header-text_line {
-        margin: 1rem auto;
-      }
       & .header-down {
+        top: 0;
         & .header-down_link {
-          width: 5rem;
-          height: 5rem;
+          padding: 2.5rem;
         }
       }
       & .header-text_buttons {
@@ -804,9 +812,6 @@ section {
         & .header-text_button {
           padding: 1.2rem 2.4rem;
         }
-      }
-      & .header-down {
-        top: 0;
       }
     }
     & .header-social {
@@ -903,8 +908,12 @@ section {
     }
   }
 
-  /*========== SCROLL UP ==========*/
   .scroll-up {
     left: 85%;
+    top: 85%;
+  }
+
+  .footer {
+    padding: 2rem;
   }
 }
