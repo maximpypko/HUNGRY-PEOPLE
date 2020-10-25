@@ -1,0 +1,29 @@
+{
+  "name": "hungry-people",
+  "version": "1.0.0",
+  "description": "Learning, practicing, improving",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maximpypko/HUNGRY-PEOPLE.git"
+  },
+  "author": "Maxim Pypko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maximpypko/HUNGRY-PEOPLE/issues"
+  },
+  "homepage": "https://github.com/maximpypko/HUNGRY-PEOPLE#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-newer": "^1.4.0",
+    "gulp-sass": "^4.1.0"
+  }
+}
