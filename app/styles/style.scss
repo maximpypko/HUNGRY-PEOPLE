@@ -159,15 +159,17 @@ section {
     & .section-text_line {
       @include sectionTextLine;
     }
-    & .header-text_buttons {
+    & .header-text_links {
       display: flex;
       justify-content: center;
-      & .header-text_button {
+      & .header-text_link {
+        padding: 2.4rem 4.8rem;
+        font-size: 1.3rem;
+        letter-spacing: 1px;
         text-transform: uppercase;
         border: $borderLink;
         background-color: transparent;
         color: #fff;
-        padding: 2.4rem 4.8rem;
         border-radius: 0.5rem;
         &:first-child {
           margin-right: 4rem;

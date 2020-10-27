@@ -251,7 +251,7 @@ section .section-wrapper .section-image .section-frame {
   border-radius: 5rem;
 }
 
-.header-content .header-text .header-text_buttons {
+.header-content .header-text .header-text_links {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -260,20 +260,22 @@ section .section-wrapper .section-image .section-frame {
           justify-content: center;
 }
 
-.header-content .header-text .header-text_buttons .header-text_button {
+.header-content .header-text .header-text_links .header-text_link {
+  padding: 2.4rem 4.8rem;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
   text-transform: uppercase;
   border: 1px solid rgba(255, 255, 255, 0.2);
   background-color: transparent;
   color: #fff;
-  padding: 2.4rem 4.8rem;
   border-radius: 0.5rem;
 }
 
-.header-content .header-text .header-text_buttons .header-text_button:first-child {
+.header-content .header-text .header-text_links .header-text_link:first-child {
   margin-right: 4rem;
 }
 
-.header-content .header-text .header-text_buttons .header-text_button:hover {
+.header-content .header-text .header-text_links .header-text_link:hover {
   background-color: #e8c300;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
