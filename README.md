@@ -1,3 +1,3 @@
-# HUNGRY-PEOPLE
+# responsive layout of the page Hungry people
 Learning, practicing, improving
-Technologies: 
+Technologies: HTML, CSS, GULP, SCSS.
